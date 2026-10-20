@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>NatureCure Naturopathy Clinic | Dr. Jyoti Agarwal </title>
+    
+    <!-- Official Clinic Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Twyc03QG/1792502220997.png">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    },
+                    colors: {
+                        forest: '#143826',
+                        forestLight: '#1d5337',
+                        leaf: '#2d6a4f',
+                        leafLight: '#40916c',
+                        sage: '#eef7ee',
+                        warmGold: '#b8860b',
+                        warmBg: '#faf9f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        button, a { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body class="bg-warmBg text-slate-800 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
+
+    <!-- 1. Top Informational Header -->
+    <div class="bg-forest text-slate-200 text-xs py-2 px-4 border-b border-forestLight">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center gap-3 text-center sm:text-left">
+                <span class="inline-flex items-center gap-1.5 text-emerald-300 font-medium">
+                    <i class="fa-solid fa-shield-halved"></i> Govt. Registered Naturopathy Clinic
+                </span>
+                <span class="hidden sm:inline text-slate-400">|</span>
+                <span class="text-slate-300">Reg. No: <strong>13554</strong></span>
+            </div>
+            <div class="flex items-center gap-4 text-center">
+                <span class="hidden sm:inline"><i class="fa-regular fa-clock text-amber-300 mr-1"></i> 10:00 AM - 1:00 PM & 4:00 PM - 7:00 PM</span>
+                <a href="tel:8679488061" class="font-bold text-white hover:text-amber-300 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone"></i> +91 8679488061
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Sticky Navbar with Official Logo -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            
+            <!-- Brand Logo with Provided Image -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-white p-1 shadow-sm border border-emerald-100 flex items-center justify-center group-hover:scale-105 transition shrink-0">
+                    <img src="https://i.postimg.cc/Twyc03QG/1792502220997.png" alt="NatureCure Logo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-black text-forest tracking-tight block leading-tight">NatureCure</span>
+                    <span class="text-[10px] sm:text-[11px] font-bold text-leaf tracking-wider uppercase block">
+                        Naturopathy Clinic <span class="text-slate-400 font-normal"></span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Items -->
+            <nav class="hidden lg:flex items-center space-x-7 font-semibold text-sm text-slate-600">
+                <a href="#home" class="hover:text-leaf transition">Home</a>
+                <a href="#about" class="hover:text-leaf transition">About Doctor</a>
+                <a href="#therapies" class="hover:text-leaf transition">Therapies</a>
+                <a href="#conditions" class="hover:text-leaf transition">Conditions Treated</a>
+                <a href="#faqs" class="hover:text-leaf transition">FAQs</a>
+                <a href="#contact" class="hover:text-leaf transition">Location</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:8679488061" class="text-forest hover:bg-sage px-3.5 py-2 rounded-xl text-sm font-bold transition">
+                    <i class="fa-solid fa-phone mr-1"></i> Call Clinic
+                </a>
+                <a href="#appointment" class="bg-forest hover:bg-forestLight text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Book OPD
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden text-2xl text-forest p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 space-y-4 font-semibold text-slate-700 shadow-xl">
+            <a href="#home" class="block py-1 hover:text-leaf border-b border-slate-100">Home</a>
+            <a href="#about" class="block py-1 hover:text-leaf border-b border-slate-100">About Dr. Jyoti Agarwal</a>
+            <a href="#therapies" class="block py-1 hover:text-leaf border-b border-slate-100">Our Therapies</a>
+            <a href="#conditions" class="block py-1 hover:text-leaf border-b border-slate-100">Conditions Treated</a>
+            <a href="#faqs" class="block py-1 hover:text-leaf border-b border-slate-100">Patient FAQs</a>
+            <a href="#contact" class="block py-1 hover:text-leaf border-b border-slate-100">Contact & Address</a>
+            <a href="#appointment" class="block w-full text-center bg-forest text-white py-3 rounded-xl font-bold shadow-md">Book Appointment</a>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section (Mobile Optimized) -->
+    <section id="home" class="relative pt-8 pb-14 md:py-20 bg-gradient-to-b from-white via-sage/30 to-warmBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <div class="lg:col-span-7 text-center sm:text-left">
+                <div class="inline-flex items-center gap-2 bg-emerald-100 border border-emerald-300 text-forest text-xs font-bold px-3.5 py-1.5 rounded-full mb-4">
+                    <i class="fa-solid fa-leaf text-leaf"></i> 100% Drugless & Natural Healing
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight font-serif">
+                    Cure With Nature. <br class="hidden sm:inline">
+                    <span class="text-leaf italic font-normal">Natural Healing Center</span>
+                </h1>
+                
+                <p class="text-slate-600 mt-4 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed mx-auto sm:mx-0">
+                    Welcome to <strong>NatureCure Naturopathy Clinic</strong> in Bijnor. Under the guidance of Dr. Jyoti Agarwal, we treat chronic ailments using Naturopathy, Therapeutic Yoga, Clinical Acupressure, and Balanced Nutritional Diets with zero medications or side-effects.
+                </p>
+
+                <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start">
+                    <a href="#appointment" class="bg-forest hover:bg-forestLight text-white px-7 py-3.5 sm:py-4 rounded-xl font-bold shadow-xl shadow-forest/15 transition flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl text-emerald-400"></i>
+                        <span>Book Instant Consultation</span>
+                    </a>
+                    <a href="#therapies" class="bg-white border-2 border-slate-200 hover:border-forest text-slate-800 px-6 py-3.5 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-sm">
+                        Explore Therapies
+                    </a>
+                </div>
+
+                <!-- OPD Micro Badge -->
+                <div class="mt-8 p-4 bg-white rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4 text-left max-w-md mx-auto sm:mx-0">
+                    <div class="w-12 h-12 rounded-xl bg-sage flex items-center justify-center text-forest text-xl shrink-0">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Daily OPD Consultation</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-600">Morning: <strong>10:00 AM – 1:00 PM</strong> | Evening: <strong>4:00 PM – 7:00 PM</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Profile Card with Clinic Emblem -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-slate-100 max-w-md w-full relative">
+                    
+                    <!-- Center Clinic Logo Badge -->
+                    <div class="flex justify-center mb-4">
+                        <div class="w-32 h-32 rounded-2xl bg-warmBg p-3 border border-emerald-100 shadow-sm flex items-center justify-center">
+                            <img src="https://i.postimg.cc/Twyc03QG/1792502220997.png" alt="NatureCure Emblem" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <span class="inline-block bg-emerald-50 border border-emerald-200 text-forest text-[11px] font-bold px-3 py-0.5 rounded-full mb-2">
+                            Reg. No. 13554
+                        </span>
+                        <h3 class="text-2xl font-black text-red-600">Dr. Jyoti Agarwal</h3>
+                        <p class="text-xs font-bold text-slate-800 uppercase tracking-widest mt-0.5">(BNYS, DAP, DIS)</p>
+                        <p class="text-xs sm:text-sm font-semibold text-leaf mt-2">
+                            Naturopathy, Yoga, Acupressure & Diet Consultant
+                        </p>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                        <div class="flex items-center justify-between">
+                            <span><i class="fa-solid fa-map-pin text-leaf mr-1.5"></i> Clinic City:</span>
+                            <span class="font-bold text-slate-800">Bijnor (U.P.)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span><i class="fa-solid fa-phone text-leaf mr-1.5"></i> Direct Contact:</span>
+                            <span class="font-bold text-slate-800">+91 8679488061</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Conditions We Treat Naturally Grid -->
+    <section id="conditions" class="py-14 sm:py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+                <span class="text-leaf text-xs font-extrabold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Holistic Care</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 font-serif">Conditions We Treat Naturally</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">Permanent drugless management for chronic health issues:</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-bone text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Cervical & Spine</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Stiffness & neck pain</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-person-walking text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Sciatica & Joints</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Arthritis & nerve pain</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-weight-scale text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Obesity & Weight</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Natural detox fat loss</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-heart-pulse text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">BP & Diabetes</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Sugar & lifestyle balance</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-brain text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Migraine & Stress</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Headache & insomnia</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-shield-virus text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Acidity & Digestion</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Gas, constipation & gut</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-venus text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">PCOD / Thyroid</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Hormone balance diets</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-warmBg flex items-center gap-3">
+                    <i class="fa-solid fa-lungs text-leaf text-xl shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Asthma & Allergy</h4>
+                        <p class="text-[10px] sm:text-[11px] text-slate-500">Breathing & immunity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Doctor Profile & Credentials -->
+    <section id="about" class="py-14 sm:py-20 bg-warmBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-sm grid md:grid-cols-12 gap-8 items-center">
+                
+                <div class="md:col-span-5 text-center">
+                    <div class="w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-full bg-gradient-to-tr from-forest to-leaf p-1 shadow-xl">
+                        <div class="w-full h-full rounded-full bg-white flex flex-col items-center justify-center p-4">
+                            <img src="https://i.postimg.cc/Twyc03QG/1792502220997.png" alt="Dr Jyoti Agarwal Emblem" class="w-20 h-20 object-contain mb-1">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Certified BNYS</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-4">Dr. Jyoti Agarwal</h3>
+                    <p class="text-xs sm:text-sm font-extrabold text-leaf">BNYS, DAP, DIS</p>
+                    <p class="text-xs text-slate-500 mt-1">Naturopathy, Yoga, Acupressure & Diet Consultant</p>
+                    <div class="inline-block mt-3 bg-emerald-50 border border-emerald-200 text-forest text-xs font-bold px-3 py-1 rounded-full">
+                        Registration No. 13554
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 space-y-4">
+                    <span class="text-leaf text-xs font-extrabold uppercase tracking-widest">Medical Philosophy</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">Activating the Body's Innate Healing Power</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Dr. Jyoti Agarwal holds an accredited <strong>BNYS (Bachelor of Naturopathy & Yogic Sciences)</strong> qualification along with diplomas in Acupressure (DAP) and Dietetics (DIS). Her clinical protocol revolves around Panchamahabhutas (nature's five elements) to restore systemic health without medicinal side-effects.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-3 pt-3 border-t border-slate-100 text-xs">
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-leaf mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">Holistic Root-Cause Treatment</span>
+                                <p class="text-slate-500">Addressing root imbalance, not masking pain.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-leaf mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">Expert Clinical Acupressure</span>
+                                <p class="text-slate-500">Targeted pressure points for fast relief.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-leaf mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">Therapeutic Medical Yoga</span>
+                                <p class="text-slate-500">Posture and pranayama therapy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-leaf mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-slate-800">Satvik Natural Diet Charts</span>
+                                <p class="text-slate-500">Structured according to your kitchen food.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Core Clinical Therapies -->
+    <section id="therapies" class="py-14 sm:py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+                <span class="text-leaf text-xs font-extrabold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Treatments</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 font-serif">Core Clinical Therapies</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">Non-invasive natural treatment modalities:</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Therapy 1 -->
+                <div class="bg-warmBg rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-leaf transition">
+                    <div class="w-11 h-11 rounded-xl bg-forest text-white flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Naturopathy</h3>
+                    <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                        <li>• Mud Pack therapy (Soothing)</li>
+                        <li>• Hydrotherapy & cold/warm packs</li>
+                        <li>• Full body detoxification</li>
+                        <li>• Fasting therapy protocols</li>
+                    </ul>
+                </div>
+
+                <!-- Therapy 2 -->
+                <div class="bg-warmBg rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-leaf transition">
+                    <div class="w-11 h-11 rounded-xl bg-forest text-white flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Acupressure</h3>
+                    <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                        <li>• Meridian point activation</li>
+                        <li>• Immediate spine pain relief</li>
+                        <li>• Sciatic nerve decompression</li>
+                        <li>• Circulatory enhancement</li>
+                    </ul>
+                </div>
+
+                <!-- Therapy 3 -->
+                <div class="bg-warmBg rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-leaf transition">
+                    <div class="w-11 h-11 rounded-xl bg-forest text-white flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-person-praying"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Therapeutic Yoga</h3>
+                    <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                        <li>• Condition-specific Asanas</li>
+                        <li>• Pranayama for vital energy</li>
+                        <li>• Guided stress reduction meditation</li>
+                        <li>• Postural correction</li>
+                    </ul>
+                </div>
+
+                <!-- Therapy 4 -->
+                <div class="bg-warmBg rounded-2xl p-5 sm:p-6 border border-slate-200 hover:border-leaf transition">
+                    <div class="w-11 h-11 rounded-xl bg-forest text-white flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-apple-whole"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Diet & Nutrition</h3>
+                    <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                        <li>• Satvik and alkaline meal charts</li>
+                        <li>• Diabetic control diet routines</li>
+                        <li>• PCOD & thyroid corrective nutrition</li>
+                        <li>• Raw juice fasting therapy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Interactive Appointment Booking Form (Direct WhatsApp Connection) -->
+    <section id="appointment" class="py-14 sm:py-20 bg-forest text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-10">
+                <span class="bg-forestLight text-emerald-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fast Booking</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold mt-3 font-serif">Schedule Your Clinic Visit</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-2">Fill the form below to connect directly with Dr. Jyoti via WhatsApp (+91 8679488061).</p>
+            </div>
+
+            <div class="bg-white text-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl">
+                <form id="clinicAppointmentForm" class="space-y-4">
+                    
+                    <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Patient Full Name *</label>
+                            <input type="text" id="patientName" required placeholder="e.g. Ramesh Kumar" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mobile / WhatsApp Number *</label>
+                            <input type="tel" id="patientMobile" required placeholder="e.g. 9876543210" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Date *</label>
+                            <input type="date" id="appointmentDate" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Time Shift *</label>
+                            <select id="timeSlot" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                                <option value="Morning (10:00 AM - 1:00 PM)">Morning Slot: 10:00 AM - 1:00 PM</option>
+                                <option value="Evening (4:00 PM - 7:00 PM)">Evening Slot: 4:00 PM - 7:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Consultation Category *</label>
+                            <select id="treatmentCategory" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                                <option value="General Naturopathy Consultation">General Naturopathy Consultation</option>
+                                <option value="Acupressure Pain Relief">Acupressure for Pain Relief</option>
+                                <option value="Spine/Cervical/Sciatica Treatment">Spine, Cervical or Sciatica Care</option>
+                                <option value="Medical Yoga Therapy">Therapeutic Yoga</option>
+                                <option value="Personalized Diet Plan">Personalized Diet Chart</option>
+                                <option value="Chronic Illness Care">Diabetes / BP / PCOD / Gut Health</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Age & Location</label>
+                            <input type="text" id="patientCity" placeholder="e.g. 40 Years, Bijnor" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Brief Symptoms or Health History (Optional)</label>
+                        <textarea id="patientNotes" rows="2" placeholder="Mention your primary symptoms or duration of condition..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-leaf focus:bg-white focus:ring-1 focus:ring-leaf outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 sm:py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Confirm Appointment via WhatsApp
+                    </button>
+                    <p class="text-center text-[11px] text-slate-500 mt-1">
+                        <i class="fa-solid fa-lock text-slate-400"></i> Your details are strictly confidential and forwarded directly to the clinic.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Frequently Asked Questions (Accordion) -->
+    <section id="faqs" class="py-14 sm:py-20 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-leaf text-xs font-extrabold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">Patient Information</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 font-serif">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-5 py-4 text-left font-bold text-slate-800 flex justify-between items-center bg-warmBg hover:bg-slate-100 transition text-sm sm:text-base">
+                        <span>Are any chemical drugs or synthetic medicines prescribed?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 shrink-0 ml-2"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 py-4 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                        No. Naturopathy is a drugless medical science. All therapies rely entirely on natural elements (mud, hydro-cleansing, therapeutic nutrition) along with acupressure and yoga to activate your internal healing response.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-5 py-4 text-left font-bold text-slate-800 flex justify-between items-center bg-warmBg hover:bg-slate-100 transition text-sm sm:text-base">
+                        <span>How soon can I expect relief for cervical or sciatica pain?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 shrink-0 ml-2"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 py-4 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                        Patients regularly experience noticeable pain alleviation and improved posture within 2 to 3 sessions of acupressure and therapeutic alignment. A full course of 7 to 15 days is advised for permanent relief.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-5 py-4 text-left font-bold text-slate-800 flex justify-between items-center bg-warmBg hover:bg-slate-100 transition text-sm sm:text-base">
+                        <span>Is prior appointment booking mandatory before visiting?</span>
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 shrink-0 ml-2"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 py-4 text-xs sm:text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+                        Walk-in consultations are welcome during active OPD hours. However, reserving your slot through the online form or WhatsApp is recommended to avoid waiting times.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Location & Contact Details -->
+    <section id="contact" class="py-14 sm:py-20 bg-warmBg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+                
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="text-leaf text-xs font-extrabold uppercase tracking-widest">Clinic Location</span>
+                        <h3 class="text-2xl font-black text-slate-900 mt-2 font-serif">Reach NatureCure</h3>
+                        
+                        <div class="mt-6 space-y-5 text-xs sm:text-sm">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-forest text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">Address:</h4>
+                                    <p class="text-slate-600 mt-0.5 leading-relaxed">
+                                        Devtanagar Colony, Near Bhooremal Devta Mandir,<br>
+                                        Opposite Jatlaan Gym, Chakka Road,<br>
+                                        <strong>Bijnor, Uttar Pradesh</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-forest text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">Consultation Timings:</h4>
+                                    <p class="text-slate-600 mt-0.5">
+                                        • Morning: <strong>10:00 AM – 1:00 PM</strong><br>
+                                        • Evening: <strong>4:00 PM – 7:00 PM</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-forest text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">Direct Helpline:</h4>
+                                    <a href="tel:8679488061" class="text-leaf font-bold hover:underline text-sm sm:text-base">+91 8679488061</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/918679488061" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-xl font-bold text-xs transition">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                        </a>
+                        <a href="tel:8679488061" class="flex-1 bg-slate-900 hover:bg-black text-white text-center py-3 rounded-xl font-bold text-xs transition">
+                            <i class="fa-solid fa-phone mr-1"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm min-h-[300px]">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Chakka+Road+Devtanagar+Bijnor+Uttar+Pradesh&output=embed" 
+                        class="w-full h-full min-h-[320px] border-0" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Sticky Mobile Bottom Quick Action Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 z-40 flex gap-2 shadow-2xl">
+        <a href="tel:8679488061" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-phone text-leaf"></i> Call Clinic
+        </a>
+        <a href="#appointment" class="flex-1 bg-forest hover:bg-forestLight text-white py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition">
+            <i class="fa-solid fa-calendar-check text-emerald-300"></i> Book OPD
+        </a>
+    </div>
+
+    <!-- 11. Floating WhatsApp Button (Desktop) -->
+    <a href="https://wa.me/918679488061?text=Hello%20Dr.%20Jyoti,%20I%20would%20like%20to%20inquire%20about%20an%20appointment%20at%20NatureCure%20Clinic." 
+       target="_blank" 
+       title="Chat on WhatsApp"
+       class="hidden md:flex fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full items-center justify-center text-3xl shadow-2xl transition hover:scale-110 z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- 12. Footer with Official Logo -->
+    <footer class="bg-forest text-slate-400 py-10 text-xs border-t border-forestLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-forestLight/60">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-white p-1 shadow flex items-center justify-center shrink-0">
+                        <img src="https://i.postimg.cc/Twyc03QG/1792502220997.png" alt="NatureCure Footer Emblem" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm sm:text-base">NatureCure Naturopathy Clinic</h4>
+                        <p class="text-slate-400 text-xs">Dr. Jyoti Agarwal (BNYS, DAP, DIS) | Reg. No. 13554</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-slate-300 font-semibold">Devtanagar Colony, Chakka Road, Bijnor, U.P.</p>
+                    <p class="text-slate-400 mt-0.5">Helpline: +91 8679488061</p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-slate-500 text-center sm:text-left">
+                <p>© 2026 NatureCure Naturopathy Clinic. All Rights Reserved.</p>
+                <p>Medical Disclaimer: Natural therapies aid the body's natural internal self-healing mechanism.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on anchor click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // 2. FAQ Accordion Logic
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 3. WhatsApp Appointment Booking Handler
+        document.getElementById('clinicAppointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const doctorWhatsApp = "918679488061";
+            const name = document.getElementById('patientName').value.trim();
+            const mobile = document.getElementById('patientMobile').value.trim();
+            const date = document.getElementById('appointmentDate').value;
+            const slot = document.getElementById('timeSlot').value;
+            const category = document.getElementById('treatmentCategory').value;
+            const city = document.getElementById('patientCity').value.trim();
+            const notes = document.getElementById('patientNotes').value.trim();
+
+            let msg = `*🌿 APPOINTMENT REQUEST - NatureCure Clinic*%0A`;
+            msg += `━━━━━━━━━━━━━━━━━━━━━%0A`;
+            msg += `👤 *Patient Name:* ${name}%0A`;
+            msg += `📱 *Contact Number:* ${mobile}%0A`;
+            msg += `📅 *Preferred Date:* ${date}%0A`;
+            msg += `⏰ *Time Slot:* ${slot}%0A`;
+            msg += `🩺 *Treatment Focus:* ${category}%0A`;
+            if (city) msg += `📍 *Age/Location:* ${city}%0A`;
+            if (notes) msg += `📝 *Notes/Symptoms:* ${notes}%0A`;
+            msg += `━━━━━━━━━━━━━━━━━━━━━%0A`;
+            msg += `_Sent via NatureCure Official Website_`;
+
+            window.open(`https://wa.me/${doctorWhatsApp}?text=${msg}`, '_blank');
+        });
+    </script>
+
+</body>
+</html>
