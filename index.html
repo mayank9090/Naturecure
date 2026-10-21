@@ -147,7 +147,7 @@
         </div>
     </header>
 
-    <!-- 3. Hero Section (Clinic Branding & Highlights - No Duplicate Doctor Card) -->
+    <!-- 3. Hero Section (Clinic Branding & Highlights) -->
     <section id="home" class="relative pt-8 pb-14 md:py-20 bg-gradient-to-b from-white via-sage/30 to-warmBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
@@ -306,7 +306,7 @@
                 <div class="md:col-span-5 text-center">
                     <div class="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full bg-gradient-to-tr from-forest to-leaf p-1 shadow-xl">
                         <div class="w-full h-full rounded-full overflow-hidden bg-white">
-                            <img src="https://i.postimg.cc/wxh7Rsdv/IMG-20261020-214849.png" alt="Dr. Jyoti Agarwal Portrait" class="w-full h-full object-cover object-top">
+                            <img src="https://i.postimg.cc/qqWJkx21/IMG-20261021-165247.jpg" alt="Dr. Jyoti Agarwal Portrait" class="w-full h-full object-cover object-top">
                         </div>
                     </div>
                     <h3 class="text-2xl font-black text-red-600 mt-4">Dr. Jyoti Agarwal</h3>
@@ -543,7 +543,7 @@
         </div>
     </section>
 
-    <!-- 9. Location & Contact Details -->
+    <!-- 9. Location & Contact Details (Integrated Google Maps Link) -->
     <section id="contact" class="py-14 sm:py-20 bg-warmBg border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
@@ -593,24 +593,33 @@
                         </div>
                     </div>
 
-                    <div class="mt-6 pt-5 border-t border-slate-100 flex gap-3">
-                        <a href="https://wa.me/918679488061" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-xl font-bold text-xs transition">
-                            <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                    <!-- Direct Action Buttons with Provided Map Link -->
+                    <div class="mt-6 pt-5 border-t border-slate-100 flex flex-wrap gap-2.5">
+                        <a href="https://maps.app.goo.gl/PdCjxF3ySsQTNoZB7" target="_blank" class="flex-1 min-w-[140px] bg-forest hover:bg-forestLight text-white text-center py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-solid fa-location-arrow text-emerald-300"></i> Get Directions
                         </a>
-                        <a href="tel:8679488061" class="flex-1 bg-slate-900 hover:bg-black text-white text-center py-3 rounded-xl font-bold text-xs transition">
-                            <i class="fa-solid fa-phone mr-1"></i> Call Now
+                        <a href="https://wa.me/918679488061" target="_blank" class="flex-1 min-w-[120px] bg-emerald-600 hover:bg-emerald-700 text-white text-center py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                        </a>
+                        <a href="tel:8679488061" class="flex-1 min-w-[100px] bg-slate-900 hover:bg-black text-white text-center py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa-solid fa-phone text-xs"></i> Call
                         </a>
                     </div>
                 </div>
 
-                <!-- Google Map -->
-                <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm min-h-[300px]">
+                <!-- Google Map Container with Direct Link Overlay -->
+                <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm min-h-[350px] relative">
                     <iframe 
-                        src="https://www.google.com/maps?q=Chakka+Road+Devtanagar+Bijnor+Uttar+Pradesh&output=embed" 
-                        class="w-full h-full min-h-[320px] border-0" 
+                        src="https://maps.google.com/maps?q=Devtanagar+Colony+Near+Bhooremal+Devta+Mandir+Opp+Jatlaan+Gym+Chakka+Road+Bijnor&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        class="w-full h-full min-h-[380px] border-0" 
                         allowfullscreen="" 
                         loading="lazy">
                     </iframe>
+                    
+                    <!-- Direct Google Maps Open Floating Button on the Map -->
+                    <a href="https://maps.app.goo.gl/PdCjxF3ySsQTNoZB7" target="_blank" class="absolute top-4 right-4 bg-white/95 backdrop-blur-md hover:bg-white text-slate-900 border border-slate-200 shadow-md font-bold text-xs py-2 px-3.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot text-forest"></i> Open in Google Maps
+                    </a>
                 </div>
 
             </div>
@@ -619,6 +628,9 @@
 
     <!-- 10. Sticky Mobile Bottom Quick Action Bar -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 z-40 flex gap-2 shadow-2xl">
+        <a href="https://maps.app.goo.gl/PdCjxF3ySsQTNoZB7" target="_blank" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-location-dot text-forest"></i> Directions
+        </a>
         <a href="tel:8679488061" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition">
             <i class="fa-solid fa-phone text-leaf"></i> Call Clinic
         </a>
@@ -715,4 +727,4 @@
     </script>
 
 </body>
-</html>
+    </html>
